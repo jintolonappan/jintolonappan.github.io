@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Getting Started: C&#43;&#43; in Visual Studio Code - Small Steps, Giant Leaps</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Getting Started: C&#43;&#43; in Visual Studio Code">
+<meta itemprop="description" content="Install C&#43;&#43; in windows and set it up to use with Visual Studio Code">
+<meta itemprop="datePublished" content="2020-06-17T00:30:11-07:00" />
+<meta itemprop="dateModified" content="2020-06-17T00:30:11-07:00" />
+<meta itemprop="wordCount" content="344">
+
+
+
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Getting Started: C&#43;&#43; in Visual Studio Code" />
+<meta property="og:description" content="Install C&#43;&#43; in windows and set it up to use with Visual Studio Code" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/cpp_vscode/" />
+<meta property="article:published_time" content="2020-06-17T00:30:11-07:00" />
+<meta property="article:modified_time" content="2020-06-17T00:30:11-07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started: C&#43;&#43; in Visual Studio Code"/>
+<meta name="twitter:description" content="Install C&#43;&#43; in windows and set it up to use with Visual Studio Code"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="/js/main.js"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="/">
+				<img src="/profile.png" alt="Small Steps, Giant Leaps" />
+			</a>
+		</div>
+	
+	<h3 class="site-title"><a href="/">Small Steps, Giant Leaps</a></h3>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jintolonappan" title="Github"><i data-feather="github"></i></a></li><li><a href="https://www.linkedin.com/in/jintolonappan/" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://twitter.com/jintolonappan" title="Twitter"><i data-feather="twitter"></i></a></li></ul>
+		</nav><span class="scheme-toggle"><a href="#" id="scheme-toggle"></a></div>
+<p></p>
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">17</span>
+							<span class="rest">Jun 2020</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Getting Started: C&#43;&#43; in Visual Studio Code</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In this quick guide, we will install C++ to use with Visual Studio Code in Windows 10.</p>
+<h3 id="pre-requisites">Pre-Requisites</h3>
+<ul>
+<li>Latest version of Visual Studio Code installed</li>
+</ul>
+<h3 id="installing-c">Installing C++</h3>
+<p>As the first step, we will get C++ installed.
+We will be using free, opensource GNU compiler made available via the MinGW-w64 (Minimalist GNU for Windows).</p>
+<p><em>More information on MinGW is available at <a href="http://www.mingw.org/">mingw.org</a></em></p>
+<p>The installer can directly be downloaded from <a href="https://sourceforge.net/projects/mingw-w64/">Sourceforge</a> by visiting:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">https://sourceforge.net/projects/mingw-w64/
+</code></pre></div><p><img src="/images/cpp_vscode/1_sf.png" alt="Sourceforge"></p>
+<p>Once downloaded, open the installer and set options as below:</p>
+<p><img src="/images/cpp_vscode/2_mingw.png" alt="MinGW-Install"></p>
+<p>You could set a desired path for installation, however, I would recommend to use the default option as below:</p>
+<p><img src="/images/cpp_vscode/3_mgw_path.png" alt="MinGW-Path"></p>
+<p>Click <strong>Next</strong> to start the installation. It may take a few minutes to complete.</p>
+<p><img src="/images/cpp_vscode/3a_mgw_cmpl.png" alt="MinGW-Done"></p>
+<h3 id="setting-environment-variables">Setting Environment Variables</h3>
+<p>As the MinGW installer wont add the binary path to Environment Variable list (<code>%PATH%</code>), we need to add it manually.</p>
+<p>Using search option available at Windows taskbar, search for &ldquo;Environment Variables&rdquo; and choose <strong><em>Edit the system environment variables</em></strong>:</p>
+<p><img src="/images/cpp_vscode/4_envvar.png" alt="EnvVarSearch">
+<em>Note: If you are in a school/ corporate network, this option may not be available. In that case, choose <strong><em>Change my environment variables</em></strong></em></p>
+<p>And, choose: <code>Environment Variables</code> &gt; <code>Path</code> &gt; <code>Edit</code></p>
+<p><img src="/images/cpp_vscode/4a_envvarwins.png" alt="EnvVarWindows"></p>
+<p>Click on <code>New</code> and add the path to your MinGW installation path. If you used the default path during the installation, it may be similar to:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">C:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin
+</code></pre></div><p><img src="/images/cpp_vscode/5_envpath.png" alt="EnvPATHset"></p>
+<h3 id="confirm-the-installation">Confirm the installation</h3>
+<p>Your installation steps are now complete and we can verify it by using your favorite commandline utility:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">g++ --version
+gcc --version
+</code></pre></div><p>You should now be able to view messages similar to below:
+<img src="/images/cpp_vscode/6_chkver.png" alt="CheckInstall"></p>
+<h3 id="setup-vs-code-for-c-compiledebugexecution">Setup VS Code for C++ compile/debug/execution</h3>
+<p>We can test VS Code integration by creating a new file called <code>hello.cpp</code> in VS Code with:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;iostream&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#6ab825;font-weight:bold">namespace</span> std;
+
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">main</span>()
+{
+    cout &lt;&lt; <span style="color:#ed9d13">&#34;Hello from VS Code!&#34;</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Press <code>F5</code> for <code>Debug</code> and choose:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">C++ (GDB/LLDB)
+</code></pre></div><p><img src="/images/cpp_vscode/9_debugenv.png" alt="VSCode_ChooseDebug"></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">g++.exe
+</code></pre></div><p><img src="/images/cpp_vscode/10_debugconfig.png" alt="VSCode_ChooseCompiler"></p>
+<p>You may close the <strong><code>launch.json</code></strong> file created and go back to <code>hello.cpp</code> tab.<br>
+You may need to press <code>F5</code> again to launch debug/run.</p>
+<p>Your code now would have executed successfully and you can view the result at <em>Terminal</em> window.
+<img src="/images/cpp_vscode/12_success.png" alt="CompileSuccess"></p>
+<p>Happy Coding!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+				
+			</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'jintolonappan';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the </a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2020  © jintolonappan |  Design by <a href="https://github.com/knadh/hugo-ink">Ink</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
